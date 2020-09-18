@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.java.di05.MessaageEn&apos; to &apos;MessageEn&apos;&#x0D;&#x0A;- Original project: &apos;02_SpringDI&apos;&#x0D;&#x0A;- Original element: &apos;com.java.di05.MessaageEn&apos;&#x0D;&#x0A;- Renamed element: &apos;com.java.di05.MessageEn&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MessaageEn&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.java.di05{MessaageEn.java[MessaageEn" matchStrategy="1" name="MessageEn" qualified="false" references="true" similarDeclarations="false" stamp="1600408053798" textual="false" version="1.0"/>
+</session>

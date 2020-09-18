@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="example" class="com.java.di02.Example"></bean>
+	<bean id="testing" class="com.java.di02.Testing"></bean>
+	
+	
+	<!-- 생성자를 이용한 방법  -->
+	<bean id="sub" class="com.java.di03.Sub">
+		<constructor-arg value="10"/>
+		<constructor-arg>
+			<value>20</value>
+		</constructor-arg>
+	</bean>
+	
+	<!-- setter를 이용하는 방법 -->
+	<bean id="sub2" class="com.java.di03.Sub">
+		<property name="x" value="30"/>
+		<property name="y">
+			<value>50</value>
+		</property>	
+	</bean>
+</beans>

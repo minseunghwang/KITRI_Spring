@@ -1,0 +1,7 @@
+package com.java.di03;
+
+public class Sub {
+	private int x;
+	private int y;
+	
+}

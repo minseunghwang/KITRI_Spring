@@ -1,0 +1,7 @@
+package com.java.di04;
+
+public class BB {
+
+	private String apple;
+	private String banana;
+}
