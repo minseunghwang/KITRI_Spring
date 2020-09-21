@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+	<!-- 핵심 클래스 -->
+	<bean id="teacher" class="com.java.aop04.Teacher"/>
+	<bean id="student" class="com.java.aop04.Student"/>
+	
+	<!-- 공통 클래스 -->
+	<bean id="pAspect" class="com.java.aop04.PAspect"/>
+	
+	<aop:config>
+		<aop:aspect id="aspect" ref="pAspect">
+			<aop:pointcut expression="within(com.java.aop04.*)" id="pMethod"/>
+			<!-- around는 exception이 발생해도 코드끝까지 돈다. 실무에서는 around를 많이 쓴다. 아래처럼 after-returning, throwing 두줄 쓸 바에야 이거 한줄-->
+			<aop:around method="sub" pointcut-ref="pMethod"></aop:around>
+			<!-- 
+			<aop:before method="open" pointcut-ref="pMethod"/>
+			<aop:after method="close" pointcut-ref="pMethod"/>
+			<aop:after-returning method="eat" pointcut-ref="pMethod"/>
+			<aop:after-throwing method="error" pointcut-ref="pMethod"/>
+			 -->
+		</aop:aspect>
+	</aop:config>
+	
+</beans>
