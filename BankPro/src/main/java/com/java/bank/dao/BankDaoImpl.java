@@ -26,12 +26,13 @@ public class BankDaoImpl implements BankDao{
 
 	@Override
 	public List<BankDto> showData() {
-		return sqlSessionTemplate.selectList("bank_select_list");		// ÀÌ·¸°Ô ¾µ ¼ö µµÀÖ°í BankMapperÀÇ id¶û ¸ÂÃçÁÖ¸éµÇ´Âµí
+		return sqlSessionTemplate.selectList("bank_select_list");		// ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ö°ï¿½ BankMapperï¿½ï¿½ idï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½Ç´Âµï¿½
 	}
 
+	
 	@Override
 	public BankDto select(String id) {
-		return sqlSessionTemplate.selectOne("dao.BankMapper.bank_select", id);		// ÀÌ·¸°Ô ÀüÃ¼? °æ·Î¸¦ ¾µ ¼ö µµÀÖ°í
+		return sqlSessionTemplate.selectOne("dao.BankMapper.bank_select", id);		// ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼? ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ö°ï¿½
 	}
 
 	@Override

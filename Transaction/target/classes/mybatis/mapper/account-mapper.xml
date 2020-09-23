@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="account">
+	<!-- 임꺽정 입금 -->
+	<update id="deposit">
+		UPDATE account
+		set money = money + #{money}
+		where account_num = #{accountNum} 
+	</update>
+	
+	<!-- 홍길동 출금 -->
+	<update id="withdraw">
+		update account
+		set money = money - #{money}
+		where account_num = #{accountNum}
+	</update>
+</mapper>
