@@ -42,5 +42,11 @@ public class AccountDAO {
 		throw new Exception();
 		
 	}
+	
+	public String inquire(String accountNum) {
+		
+		return sqlSession.selectOne("account.inquire",accountNum);
+	}
+	
 
 }

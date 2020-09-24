@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 
@@ -17,15 +18,25 @@ public class AccountService {
 	@Autowired
 	PlatformTransactionManager transactionManager;
 	
+	@Transactional(rollbackFor=Exception.class)
 	public void transfer(int money, String accountNum) {
 		
 		TransactionStatus status = transactionManager.getTransaction(new DefaultTransactionDefinition());
 		
 		try {
-			dao.withdraw(money, "1234-5678");
-			dao.deposit(money, accountNum);
 			
-//			System.out.println(dao.transferOk());
+			String hongNum = "1234-5678";
+			
+			dao.withdraw(money, "1234-5678");
+			
+			String hongMoney = dao.inquire(hongNum);
+			
+			if(money > Integer.parseInt(hongMoney)) {
+				System.out.println(dao.transfering());
+			} else {
+				dao.deposit(money, accountNum);
+				System.out.println(dao.transferOk());
+			}
 			
 			transactionManager.commit(status);
 			
