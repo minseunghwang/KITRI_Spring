@@ -10,6 +10,18 @@
 	<link rel="stylesheet" href="${root }/CSS/member/joinStyle.css">
 	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="${root }/javaScript/member/register.js"></script>
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+		function zipcodeReader() {
+			new daum.Postcode({
+		        oncomplete: function(data) {
+		        	$('input[name=zipCode]').val(data.zonecode);
+		        	$('input[name=addr]').val(data.address);
+		        	$('input[name=addr]').focus();
+		        }
+		    }).open();
+		}
+	</script>
 </head>
 <body>
 	<!--<jsp:include page="../../../index.jsp"/><br><br>-->
@@ -48,7 +60,7 @@
 				<div>
 					<label>우편번호</label>
 					<input type="text" name="zipCode" >
-					<input type="button" onclick="zipcodeReader('${root}')" value="우편번호 검색">
+					<input type="button" onclick="zipcodeReader()" value="우편번호 검색">
 				</div>
 				<div>
 					<label>주소</label>

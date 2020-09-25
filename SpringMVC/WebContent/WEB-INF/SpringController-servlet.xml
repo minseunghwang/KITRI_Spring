@@ -5,26 +5,30 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 	
-	
-	<bean id="hAspect" class="com.java.aop.HAspect"></bean>
+	<!-- AOP -->
+	<bean id="hAspect" class="com.java.aop.HAspect"/>
 	<aop:config>
 		<aop:aspect id="exAspect" ref="hAspect">
-			<aop:pointcut expression="within(com.java.*)" id="pMethod"/>
+			<aop:pointcut expression="within(com.java..*)" id="pMethod"/>
 			<aop:around method="advice" pointcut-ref="pMethod"/>
 		</aop:aspect>
 	</aop:config>
 	
+	
+	<!-- Handler Mapping / UI요청이 들어오면 해당 클래스를 찾아라-->
 	<bean id="handlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-		<property name="mappings">
-			<props>
-				<prop key="/member/*.do">memberController</prop>		<!-- 이런 파라미터가 들어오면 memberController로 보낼거야 -->
-			</props>		
+		<property name="mappings"><!-- setter -->
+			<props><!-- 클래스를 찾고 -->
+				<prop key="/member/*.do">memberController</prop><!-- 여기의 컨트롤러 = MVC의 커맨드 -->
+			</props><!-- parameter -->
 		</property>
 	</bean>
 	
+	
+	
+	<!-- MVC RequestDispatcher / foward --><!-- view라는 애가 넘어오면 내부적으로 이동하라는 명령 -->
 	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
-	
 </beans>

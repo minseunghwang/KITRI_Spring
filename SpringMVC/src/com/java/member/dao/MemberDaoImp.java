@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 
+import com.java.aop.HAspect;
 import com.java.member.dto.MemberDto;
 import com.java.member.dto.ZipcodeDto;
 
@@ -24,13 +25,16 @@ public class MemberDaoImp implements MemberDao {
 
 	@Override
 	public int memberInsert(MemberDto memberDto) {
-		int check = 0;
-		check = sqlSessionTemplate.insert("member_insert",memberDto);
-		return check;
+		return sqlSessionTemplate.insert("member_insert", memberDto);
 	}
 	@Override
 	public int memberIdCheck(String id) {
-		return 0;
+		String value= sqlSessionTemplate.selectOne("member_id_check", id);
+		int check=0;
+		if (value!=null) {
+			check=1;
+		}
+		return check;
 	}
 	@Override
 	public List<ZipcodeDto> zipcode(String dong) {
@@ -39,18 +43,19 @@ public class MemberDaoImp implements MemberDao {
 	
 	@Override
 	public String memberLoginOk(Map<String, String> map) {
-		return null;
+		return sqlSessionTemplate.selectOne("member_login", map);
 	}
 	@Override
 	public MemberDto memberUpdate(String id) {
-		return null;
+		return sqlSessionTemplate.selectOne("member_select", id);
 	}
 	@Override
 	public int memberUpdateOk(MemberDto memberDto) {
-		return 0;
+		return sqlSessionTemplate.insert("member_update", memberDto);
 	}
 	@Override
 	public int memberDeleteOk(Map<String, String> hmap) {
-		return 0;
+		HAspect.logger.info(HAspect.logMsg + hmap);
+		return sqlSessionTemplate.delete("member_delete", hmap);
 	}
 }
