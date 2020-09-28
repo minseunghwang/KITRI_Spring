@@ -26,7 +26,6 @@
     <fullyQualifiedTypeName name="org.springframework.transaction.TransactionStatus"/>
     <fullyQualifiedTypeName name="org.springframework.transaction.support.DefaultTransactionDefinition"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionTemplate"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
@@ -35,6 +34,9 @@
     <fullyQualifiedTypeName name="com.java.transaction.service.AccountService"/>
     <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
     <fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
-    <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
     <fullyQualifiedTypeName name="com.java.member.service.MemberService"/>
+    <fullyQualifiedTypeName name="com.java.aop.HAspect"/>
+    <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+    <fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionTemplate"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 </qualifiedTypeNameHistroy>

@@ -19,8 +19,10 @@
 	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="driverManagerDataSource"/>
 		<property name="mapperLocations" >
+			<!-- 두개세개네개이상 가능~! -->
 			<list>
 				<value>classpath:com/java/member/dao/mapper/MemberMapper.xml</value>
+				<value>classpath:com/java/fileBoard/dao/mapper/FileBoardMapper.xml</value>
 			</list>
 		</property>
 	</bean>

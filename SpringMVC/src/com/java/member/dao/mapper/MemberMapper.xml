@@ -39,7 +39,6 @@
 				#{memberLevel},
 				sysdate
 			  )
-			  
 	 </insert>
 	 
 	 <select id="member_id_check" parameterType="java.lang.String" resultType="String">
