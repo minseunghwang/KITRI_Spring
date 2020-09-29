@@ -48,6 +48,10 @@ public class FileBoardController extends MultiActionController {
 		return mav;
 	}
 	public void fileBoardDownLoad(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("request", request);
+		mav.addObject("response",response);
+		fileBoardService.fileBoardDownLoad(mav);
 	}
 	
 	public ModelAndView fileBoardDelete(HttpServletRequest request, HttpServletResponse response) {
@@ -57,9 +61,18 @@ public class FileBoardController extends MultiActionController {
 		return null;
 	}
 	public ModelAndView fileBoardUpdate(HttpServletRequest request, HttpServletResponse response) {
-		return null;
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("request",request);
+		
+		fileBoardService.fileBoardUpdate(mav);
+		
+		return mav;
 	}
 	public ModelAndView fileBoardUpdateOk(HttpServletRequest request, HttpServletResponse response, FileBoardDto fileBoardDto) {
-		return null;
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("request",request);
+		mav.addObject("fileBoardDto",fileBoardDto);
+		fileBoardService.fileBoardUpdateOk(mav);
+		return mav;
 	}
 }

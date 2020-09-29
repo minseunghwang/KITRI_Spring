@@ -34,7 +34,10 @@ public class FileBoardDaoImp implements FileBoardDao {
 	
 	@Override
 	public int fileBoardWriteOk(FileBoardDto fileBoardDto) {
-		return sqlSessionTemplate.update("fileBoard_insert",fileBoardDto);
+		if(fileBoardDto.getFileName() == null) {
+			return sqlSessionTemplate.update("fileBoard_insert",fileBoardDto); 
+		}
+		return sqlSessionTemplate.update("fileBoard_insert_file",fileBoardDto);
 	}
 	
 	@Override
@@ -57,7 +60,7 @@ public class FileBoardDaoImp implements FileBoardDao {
 	}
 	@Override
 	public FileBoardDto fileBoardSelect(int boardNumber) {
-		return null;
+		return sqlSessionTemplate.selectOne("fileBoard_read", boardNumber);
 	}
 	@Override
 	public int fileBoardDeleteOk(Map<String, Object> hmap) {
@@ -65,6 +68,11 @@ public class FileBoardDaoImp implements FileBoardDao {
 	}
 	@Override
 	public int fileBoardUpdateOk(FileBoardDto updateDto, int fileDelCheck) {
-		return 0;
+		if (fileDelCheck == 1 && updateDto.getFileName() == null) {
+			return sqlSessionTemplate.update("fileBoard_update_delFile",updateDto);
+		} else if(fileDelCheck ==1 && updateDto.getFileName() != null) {
+			return sqlSessionTemplate.update("fileBoard_update_file",updateDto);
+		} 
+		return sqlSessionTemplate.update("fileBoard_update",updateDto);
 	}
 }

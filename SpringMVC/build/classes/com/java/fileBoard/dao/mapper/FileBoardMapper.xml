@@ -16,9 +16,9 @@
 		<result column="GROUP_NUMBER" property="groupNumber"/>
 		<result column="SEQUENCE_NUMBER" property="sequenceNumber"/>
 		<result column="SEQUENCE_LEVEL" property="sequenceLevel"/>
-		<result column="FILE_NAME" property="file_name"/>
+		<result column="FILE_NAME" property="fileName"/>
 		<result column="PATH" property="path"/>
-		<result column="FILE_SIZE" property="file_size"/>
+		<result column="FILE_SIZE" property="fileSize"/>
 	</resultMap>
 
 	<select id="fileBoard_maxGroup" resultType="int">
@@ -31,6 +31,42 @@
 		set sequence_number = sequence_number+1
 		where group_number=#{groupNumber} and sequence_number > #{sequenceNumber}	
 	</update>
+	
+	<insert id="fileBoard_insert_file" parameterType="com.java.fileBoard.dto.FileBoardDto">
+		insert
+		into board(
+					BOARD_NUMBER,
+					WRITER,
+					SUBJECT,
+					EMAIL,
+					CONTENT,
+					PASSWORD,
+					WRITE_DATE,
+					READ_COUNT,
+					GROUP_NUMBER,
+					SEQUENCE_NUMBER,
+					SEQUENCE_LEVEL,
+					FILE_NAME,
+					PATH,
+					FILE_SIZE
+					)
+			values(
+					board_num_seq.nextval,
+					#{writer},
+					#{subject},
+					#{email},
+					#{content},
+					#{password},
+					#{writeDate},
+					#{readCount},
+					#{groupNumber},
+					#{sequenceNumber},
+					#{sequenceLevel},
+					#{fileName},
+					#{path},
+					#{fileSize}
+				)
+	</insert>
 	
 	<insert id="fileBoard_insert" parameterType="com.java.fileBoard.dto.FileBoardDto">
 		insert
@@ -96,4 +132,34 @@
 		from board
 		where board_number=#{boardNumber}
 	</select>
+	
+	<update id="fileBoard_update_delFile" parameterType="com.java.fileBoard.dto.FileBoardDto">
+		update board
+		set email = #{email},
+			subject = #{subject},
+			content = #{content},
+			file_name = <![CDATA['']]>,
+			path = <![CDATA['']]>,
+			file_size = 0
+		where board_number = #{boardNumber}
+	</update>
+	
+	<update id="fileBoard_update_file" parameterType="com.java.fileBoard.dto.FileBoardDto">
+		update board
+		set email = #{email},
+			subject = #{subject},
+			content = #{content},
+			file_name = #{fileName},
+			path = #{path},
+			file_size = #{fileSize}
+		where board_number = #{boardNumber}
+	</update>
+	
+	<update id="fileBoard_update" parameterType="com.java.fileBoard.dto.FileBoardDto">
+		update board
+		set email = #{email},
+			subject = #{subject},
+			content = #{content}
+		where board_number = #{boardNumber}
+	</update>
 </mapper>
