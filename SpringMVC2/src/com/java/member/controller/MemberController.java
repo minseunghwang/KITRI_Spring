@@ -16,7 +16,7 @@ import com.java.member.dto.MemberDto;
 import com.java.member.service.MemberService;
 
 @Controller
-public class MemberController extends MultiActionController{	//command
+public class MemberController{	//command
 	@Autowired
 	private MemberService memberService;
 	

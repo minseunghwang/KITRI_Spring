@@ -13,7 +13,7 @@ import com.java.fileBoard.dto.FileBoardDto;
 import com.java.fileBoard.service.FileBoardService;
 
 @Controller
-public class FileBoardController extends MultiActionController {
+public class FileBoardController  {
 	@Autowired
 	private FileBoardService fileBoardService;
 	
