@@ -7,6 +7,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 	
+	<!-- root-context.xml  : 생성한 프로젝트에서 사용할 값들 중 변하지않고 여기저기서 사용할 수 있는 것들을 property로서 입력하여 놓고, 그것을 beans화 하여 여러곳에서 beans를 선언하지 않고 사용하도록 설정하는 역할 -->
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- Spring DB Driver -->
 	<bean id="driverManagerDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

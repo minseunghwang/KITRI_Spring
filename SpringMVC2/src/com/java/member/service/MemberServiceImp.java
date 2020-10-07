@@ -32,9 +32,8 @@ public class MemberServiceImp implements MemberService {
 		
 		mav.addObject("check", check);
 		mav.setViewName("member/registerOk");
-		
-		
 	}
+	
 	@Override
 	public void memberIdCheck(ModelAndView mav) {
 		Map<String, Object> map = mav.getModelMap();

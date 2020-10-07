@@ -41,7 +41,6 @@ public class MemberController{	//command
 	
 	@RequestMapping(value="/member/register.do")
 	public ModelAndView memberRegister(HttpServletRequest request, HttpServletResponse response) {
-		
 		return new ModelAndView("member/register");
 	}
 	

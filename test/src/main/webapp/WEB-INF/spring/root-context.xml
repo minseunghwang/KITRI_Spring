@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+	
+	<!-- root-context.xml  : 생성한 프로젝트에서 사용할 값들 중 변하지않고 여기저기서 사용할 수 있는 것들을 property로서 입력하여 놓고, 그것을 beans화 하여 여러곳에서 beans를 선언하지 않고 사용하도록 설정하는 역할 -->
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- Spring DB Driver -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver"/>
+		<property name="url" value="jdbc:mariadb://115.85.180.183:3306/lee"/>
+		<property name="username" value="root"/>
+		<property name="password" value="123"/>
+	</bean>
+	
+	<!-- Mybatis : sqlSessionFactoryBean-->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mapperLocations" value="classpath:com/java/**/*.xml">
+			<!-- 두개세개네개이상 가능~! -->
+			<!-- <list>
+				<value>classpath:com/java/member/dao/mapper/MemberMapper.xml</value>
+				<value>classpath:com/java/fileBoard/dao/mapper/FileBoardMapper.xml</value>
+			</list> -->
+		</property>
+	</bean>
+	
+	<!-- Mybatis : sqlSessionTemplate -->
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate"><!-- Template으로 던져야해서 -->
+		<constructor-arg ref="sqlSessionFactoryBean"/>
+	</bean>
+	
+	<!-- Transaction 공통클래스 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="Exception"/><!-- 모든 메소드가 tx를 반드시 거치게 한다. -->
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut expression="within(com.java..*)" id="txPublicMethod"/>
+			<aop:advisor advice-ref="txAdvice" pointcut-ref="txPublicMethod"/>
+	</aop:config>
+		
+</beans>
