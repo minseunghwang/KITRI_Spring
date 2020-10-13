@@ -49,5 +49,4 @@
 		<aop:pointcut expression="within(com.java..*)" id="txPublicMethod"/>
 			<aop:advisor advice-ref="txAdvice" pointcut-ref="txPublicMethod"/>
 	</aop:config>
-		
 </beans>
