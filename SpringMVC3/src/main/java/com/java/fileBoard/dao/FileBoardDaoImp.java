@@ -38,6 +38,7 @@ public class FileBoardDaoImp implements FileBoardDao {
 	public int fileBoardCount() {
 		return sqlSessionTemplate.selectOne("fileBoard_getCount");
 	}
+	
 	@Override
 	public List<FileBoardDto> fileBoardList(int startRow, int endRow) {
 		Map<String, Integer> hMap = new HashMap<String, Integer>();
@@ -46,20 +47,23 @@ public class FileBoardDaoImp implements FileBoardDao {
 		
 		return sqlSessionTemplate.selectList("fileBoard_list", hMap);
 	}
+	
 	@Override
 	public FileBoardDto fileBoardRead(int boardNumber) {
 		sqlSessionTemplate.update("fileBoard_view", boardNumber);
 		return sqlSessionTemplate.selectOne("fileBoard_read", boardNumber);
-		
 	}
+	
 	@Override
 	public FileBoardDto fileBoardSelect(int boardNumber) {
 		return sqlSessionTemplate.selectOne("fileBoard_read", boardNumber);
 	}
+	
 	@Override
 	public int fileBoardDeleteOk(Map<String, Object> hmap) {
 		return 0;
 	}
+	
 	@Override
 	public int fileBoardUpdateOk(FileBoardDto updateDto, int fileDelCheck) {
 		if (fileDelCheck == 1 && updateDto.getFileName() == null) {
