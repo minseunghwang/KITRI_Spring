@@ -75,12 +75,6 @@ public class ReviewDto {
 		this.r_date = r_date;
 	}
 
-	@Override
-	public String toString() {
-		return "ReviewVO [num=" + num + ", m_id=" + m_id + ", rate=" + rate + ", content=" + content + ", img=" + img
-				+ ", r_date=" + r_date + "]";
-	}
-
 	public int getP_num() {
 		return p_num;
 	}
@@ -88,6 +82,11 @@ public class ReviewDto {
 	public void setP_num(int p_num) {
 		this.p_num = p_num;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "ReviewDto [num=" + num + ", m_id=" + m_id + ", p_num=" + p_num + ", rate=" + rate + ", content="
+				+ content + ", img=" + img + ", r_date=" + r_date + "]";
+	}
 	
 }

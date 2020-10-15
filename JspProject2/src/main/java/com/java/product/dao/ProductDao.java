@@ -13,11 +13,11 @@ public interface ProductDao {
 	List<ProductDto> selectAll();
 	ArrayList<ProductSizeVO> selectSizeAll(int p_num);
 	ArrayList<ProductDto> selectAllByPageNum(int page);
-	ArrayList<ProductDto> selectBestProducts(int numberItems);
-	ArrayList<ProductDto> selectNewProducts(int numberItems);
-	ArrayList<ProductDto> selectCategoryProducts(String category);
-	ArrayList<ProductDto> selectCategoryProductsByPageNum(String category, int page);
-	ArrayList<ProductDto> selectCategoryProductsSort(String category, int page, String orderBy);
+	List<ProductDto> selectBestProducts(int numberItems);
+	List<ProductDto> selectNewProducts(int numberItems);
+	List<ProductDto> selectCategoryProducts(String category);
+	List<ProductDto> selectCategoryProductsByPageNum(String category, int page);
+	List<ProductDto> selectCategoryProductsSort(String category, int page, String orderBy);
 	ArrayList<ProductDto> selectKeywordProductsByPageNum(String keyword, int page);
 	ArrayList<ProductDto> selectKeywordProductsSort(String keyword, int page, String orderBy);
 	ArrayList<ProductImageVO> selectDetailImages(int p_num);

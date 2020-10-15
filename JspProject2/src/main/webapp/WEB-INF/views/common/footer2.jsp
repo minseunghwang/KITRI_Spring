@@ -10,12 +10,12 @@
 	<meta name="author" content="">
 
 	<!-- Bootstrap core CSS -->
-	<link href="<%=request.getContextPath()%>/resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Bootstrap core JavaScript -->
-	<%-- <script src="<%=request.getContextPath()%>/resource/vendor/jquery/jquery.min.js"></script> --%>
+	<%-- <script src="<%=request.getContextPath()%>/resources/vendor/jquery/jquery.min.js"></script> --%>
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="<%=request.getContextPath()%>/resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	
 	<style type="text/css">
  		html, body{

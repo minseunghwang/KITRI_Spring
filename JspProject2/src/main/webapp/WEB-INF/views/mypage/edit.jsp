@@ -14,7 +14,7 @@
 <title>Shop Homepage - 회원정보 수정</title>
 
 <!-- Bootstrap core CSS -->
-<link href="<%=request.getContextPath()%>/resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   
 <style type="text/css">

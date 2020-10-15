@@ -8,10 +8,10 @@
 <head>
 <meta charset="UTF-8">
 <title>내가 쓴 리뷰 내역</title>
-<link href="<%=request.getContextPath()%>/resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="<%=request.getContextPath()%>/resource/css/shop-item.css" rel="stylesheet">
+  <link href="<%=request.getContextPath()%>/resources/css/shop-item.css" rel="stylesheet">
 
 
 <!-- popup -->

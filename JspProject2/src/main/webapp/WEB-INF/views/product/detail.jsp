@@ -14,14 +14,14 @@
 	<title>Shop Item - Start Bootstrap Template</title>
 	
 	<!-- Bootstrap core CSS -->
-	<link href="<%=request.getContextPath()%>/resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	
 	<!-- Custom styles for this template -->
-	<link href="<%=request.getContextPath()%>/resource/css/shop-item.css" rel="stylesheet">
+	<link href="<%=request.getContextPath()%>/resources/css/shop-item.css" rel="stylesheet">
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="<%=request.getContextPath()%>/resource/vendor/jquery/jquery.min.js"></script>
-	<script src="<%=request.getContextPath()%>/resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/vendor/jquery/jquery.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
 	<style type="text/css">

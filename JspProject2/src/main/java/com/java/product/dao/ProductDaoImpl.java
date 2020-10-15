@@ -1,7 +1,9 @@
 package com.java.product.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,28 +35,38 @@ public class ProductDaoImpl implements ProductDao {
 	}
 
 	@Override
+	public List<ProductDto> selectNewProducts(int numberItems) {
+		return sqlSessionTemplate.selectList("new_product", numberItems);
+	}
+
+	@Override
 	public ArrayList<ProductDto> selectBestProducts(int numberItems) {
 		return null;
 	}
 
 	@Override
-	public ArrayList<ProductDto> selectNewProducts(int numberItems) {
-		return null;
+	public List<ProductDto> selectCategoryProducts(String category) {
+		return sqlSessionTemplate.selectList("category_product", category);
 	}
 
 	@Override
-	public ArrayList<ProductDto> selectCategoryProducts(String category) {
-		return null;
+	public List<ProductDto> selectCategoryProductsByPageNum(String category, int page) {
+		Map<String, String> hmap = new HashMap<String, String>();
+		hmap.put("category", category);
+		int startRange = (page - 1) * 8 + 1;
+		hmap.put("page", Integer.toString(startRange));
+		int endRange = page * 8;
+		hmap.put("num", Integer.toString(endRange));
+		return sqlSessionTemplate.selectList("category_product_pageNum",hmap);
 	}
 
 	@Override
-	public ArrayList<ProductDto> selectCategoryProductsByPageNum(String category, int page) {
-		return null;
-	}
-
-	@Override
-	public ArrayList<ProductDto> selectCategoryProductsSort(String category, int page, String orderBy) {
-		return null;
+	public List<ProductDto> selectCategoryProductsSort(String category, int page, String orderBy) {
+		Map<String, String> hmap = new HashMap<String, String>();
+		hmap.put("category", category);
+		hmap.put("page", Integer.toString(page));
+		hmap.put("orderby", orderBy);
+		return sqlSessionTemplate.selectList("category_product_Sort",hmap);
 	}
 
 	@Override

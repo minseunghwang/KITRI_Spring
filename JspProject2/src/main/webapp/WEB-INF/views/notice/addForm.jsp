@@ -7,11 +7,11 @@
 <title>Insert title here</title>
 <!-- Bootstrap core CSS -->
 <link
-	href="<%=request.getContextPath()%>/resource/vendor/bootstrap/css/bootstrap.min.css"
+	href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="<%=request.getContextPath()%>/resource/css/shop-item.css"
+<link href="<%=request.getContextPath()%>/resources/css/shop-item.css"
 	rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

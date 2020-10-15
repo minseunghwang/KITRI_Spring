@@ -17,11 +17,11 @@ public interface ProductService {
 	
 	ArrayList<ProductDto> getProductManagementByPageNum(int page);
 	
-	ArrayList<ProductDto> getBestProducts(int numberItems);
+	public void getBestProducts(ModelAndView mav, int numberItems);
 	
-	ArrayList<ProductDto> getNewProducts(int numberItems);
+	public void getNewProducts(ModelAndView mav, int numberItems);
 	
-	ArrayList<ProductDto> getCategoryProducts(String category);
+	public void getCategoryProducts(ModelAndView mav);
 	
 	ArrayList<ProductDto> getCategoryProductsByPageNum(String category, int page);
 	

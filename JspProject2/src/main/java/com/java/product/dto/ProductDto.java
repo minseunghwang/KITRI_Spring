@@ -112,13 +112,13 @@ public class ProductDto {
 		this.category = category;
 	}
 
-//	public ArrayList<ReviewDto> getReviews() {
-//		return reviews;
-//	}
-//
-//	public void setReviews(ArrayList<ReviewDto> reviews) {
-//		this.reviews = reviews;
-//	}
+	public ArrayList<ReviewDto> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(ArrayList<ReviewDto> reviews) {
+		this.reviews = reviews;
+	}
 
 	public String getPriceView() {
 		return priceView;
@@ -131,18 +131,7 @@ public class ProductDto {
 	@Override
 	public String toString() {
 		return "ProductDto [num=" + num + ", name=" + name + ", price=" + price + ", img=" + img + ", content="
-				+ content + ", e_date=" + e_date + ", record=" + record + ", category=" + category + ", priceView="
-				+ priceView + "]";
+				+ content + ", e_date=" + e_date + ", record=" + record + ", category=" + category + ", reviews="
+				+ reviews + ", sizes=" + sizes + ", priceView=" + priceView + "]";
 	}
-
-//	@Override
-//	public String toString() {
-//		return "ProductVO [num=" + num + ", name=" + name + ", price=" + price + ", img=" + img + ", content=" + content
-//				+ ", e_date=" + e_date + ", record=" + record + ", category=" + category + ", reviews=" + reviews
-//				+ ", sizes=" + sizes + ", priceView=" + priceView + "]";
-//	}
-
-	
-	
-	
 }

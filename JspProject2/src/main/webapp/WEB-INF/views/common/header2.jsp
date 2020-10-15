@@ -13,13 +13,13 @@
 <meta name="author" content="">
 
 <!-- Bootstrap core CSS -->
-<link href="<%=request.getContextPath()%>/resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
 <!-- Bootstrap core JavaScript -->
-<%-- <script src="<%=request.getContextPath()%>/resource/vendor/jquery/jquery.min.js"></script> --%>
+<%-- <script src="<%=request.getContextPath()%>/resources/vendor/jquery/jquery.min.js"></script> --%>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script src="<%=request.getContextPath()%>/resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<%=request.getContextPath()%>/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
 <!-- Add the slick-theme.css if you want default styling -->
@@ -27,7 +27,7 @@
 <!-- Add the slick-theme.css if you want default styling -->
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
-<load target="resource/js/jquery.vticker.js" type="body" />
+<load target="resources/js/jquery.vticker.js" type="body" />
 
 	<style type="text/css">
 		img {
@@ -531,7 +531,7 @@
 
 		<div class="page-header border-top">
 			<div class="category-header">
-				<a href="<%=request.getContextPath()%>/CategoryController?category=top&page=1" style="text-decoration: none;">Top</a> 
+				<a href="<%=request.getContextPath()%>/category.do?category=top&page=1" style="text-decoration: none;">Top</a> 
 				<a href="<%=request.getContextPath()%>/CategoryController?category=bottom&page=1" style="text-decoration: none;">Bottom</a>
 			</div>
 		</div>

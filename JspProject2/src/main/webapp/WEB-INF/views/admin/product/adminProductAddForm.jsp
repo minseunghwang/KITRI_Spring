@@ -16,7 +16,7 @@
 	
 	</style>
 	
-	<script src="<%=request.getContextPath()%>/resource/vendor/jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="<%=request.getContextPath()%>/resources/vendor/jquery/jquery.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 
 		$(document).ready(function() {

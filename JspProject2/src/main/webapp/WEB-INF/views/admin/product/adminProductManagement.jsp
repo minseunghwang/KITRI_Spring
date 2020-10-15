@@ -13,7 +13,7 @@
 	
 	<!-- Bootstrap core JavaScript -->
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="<%=request.getContextPath()%>/resource/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="<%=request.getContextPath()%>/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<style type="text/css">
 		#tbody_tr > td{

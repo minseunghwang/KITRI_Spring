@@ -14,10 +14,10 @@
 <title>Shop Homepage - 비밀번호 찾기</title>
 
 <!-- Bootstrap core CSS -->
-<link href="<%=request.getContextPath()%>/resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="<%=request.getContextPath()%>/resource/css/shop-item.css" rel="stylesheet">
+  <link href="<%=request.getContextPath()%>/resources/css/shop-item.css" rel="stylesheet">
 <style type="text/css">
 .container{
 	height: auto;

@@ -12,10 +12,10 @@
 <title>Shop Homepage - Start Bootstrap Template</title>
 
 <!-- Bootstrap core CSS -->
-<link href="<%=request.getContextPath()%>/resource/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="<%=request.getContextPath()%>/resource/css/shop-item.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/resources/css/shop-item.css" rel="stylesheet">
 	<style type="text/css">
 		#back_img{
 			min-width: 100%;
@@ -61,10 +61,10 @@
 
 				<c:choose>
 					<c:when test="${param.category eq 'top' }">
-						<img id="back_img" src="sample_img/wideimage14.jpg">
+						<img id="back_img" src="resources/sample_img/wideimage14.jpg">
 					</c:when>
 					<c:otherwise>
-						<img id="back_img" src="sample_img/wideimage16.jpg">
+						<img id="back_img" src="resources/sample_img/wideimage16.jpg">
 					</c:otherwise>
 				</c:choose>
 
@@ -226,7 +226,7 @@
 	<%@include file="/WEB-INF/views/common/footer2.jsp"%>
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="resources/vendor/jquery/jquery.min.js"></script>
+	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
